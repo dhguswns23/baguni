@@ -1,5 +1,5 @@
 @foreach($contents as $content)
-    <div class="content" data-id="{{ $content->id }}">
+    <div class="content" data-id="{{ $content->id }}" ontouchend="">
         <div class="title">
             {{ $content->title }}
         </div>
