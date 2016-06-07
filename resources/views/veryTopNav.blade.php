@@ -6,8 +6,11 @@
         Upload
     </a>
     <div class="right-menu">
-        <a href="{{URL::to('mypage')}}" class="content">
-            mypage
+        <a href="{{URL::to('/mypage')}}" class="content">
+            Mypage
+        </a>
+        <a href="{{URL::to('/logout')}}" class="content">
+            Logout
         </a>
     </div>
 </nav>

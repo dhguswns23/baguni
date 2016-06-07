@@ -17,13 +17,13 @@
             <div class="name">Uploader : <strong>{{ $content->name }}</strong></div>
         </div>
         @if($content->status == 'reg' && $content->uploader != Session::get('id'))
-            <a href="/mypage" class="modal-button" data-next="zzim" data-which="@if($content->seller_id != 0)buyer_id @else seller_id @endif">ZZim</a>
+            <a href="{{ URL::to('/mypage') }}" class="modal-button" data-next="zzim" data-which="@if($content->seller_id != 0)buyer_id @else seller_id @endif">ZZim</a>
         @elseif($content->status == 'zzim' && $content->seller_id == Session::get('id'))
-            <a href="/mypage" class="modal-button" data-next="in_progress">Progress</a>
+            <a href="{{ URL::to('/mypage') }}" class="modal-button" data-next="in_progress">Progress</a>
         @elseif($content->status == 'in_progress' && $content->seller_id == Session::get('id'))
-            <a href="/mypage" class="modal-button" data-next="in_baguni">Baguni</a>
+            <a href="{{ URL::to('/mypage') }}" class="modal-button" data-next="in_baguni">Baguni</a>
         @elseif($content->status == 'in_baguni' && $content->buyer_id == Session::get('id'))
-            <a href="/mypage" class="modal-button" data-next="done">Done</a>
+            <a href="{{ URL::to('/mypage') }}" class="modal-button" data-next="done">Done</a>
         {{--@else--}}
             {{--<a href="#" class="modal-button finished" data-next="">Finished</a>--}}
         @endif
@@ -42,7 +42,7 @@
             ajaxData += 'status='+$(this).data('next');
         }
         $.ajax({
-            url:'{{ URL::to('/updateItem') }}'+'/'+{{$content->id}},
+            url:'{{ URL::to('/updateItem') }}'+'/'+{{ $content->id }},
             type:'get',
             data:ajaxData,
             success:function(result){

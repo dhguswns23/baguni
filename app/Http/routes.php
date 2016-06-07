@@ -22,5 +22,6 @@ Route::group(['middleware'=>['rootCheck']],function(){
     Route::get('/ajaxDetails/{id}','MainController@AjaxGetDetails');
     Route::get('/ajaxMyItem','MainController@AjaxMyItem');
     Route::get('/updateItem/{id}','MainController@UpdateItem');
+    Route::get('/logout','MainController@Logout');
 });
 Route::get('/rootCheck','MainController@rootCheck');
