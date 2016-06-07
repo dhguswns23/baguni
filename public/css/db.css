@@ -254,6 +254,7 @@ div.input-button{
     left:0;
     top:70px;
     right:0;
+    z-index:9999;
 }
 .main-sub-nav .content{
     float:left;
