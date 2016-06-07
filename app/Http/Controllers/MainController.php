@@ -105,6 +105,7 @@ class MainController extends Controller
     }
     public function rootCheck(){
         Session::put('root','on');
+        return redirect('/');
     }
     public function logout(){
         Session::flush();
